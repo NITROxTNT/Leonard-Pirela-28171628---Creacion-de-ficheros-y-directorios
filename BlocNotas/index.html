@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <title>Creación de ficheros de texto y directorios</title>
+</head>
+<body>
+    
+    <div id="divEncabezado"> 
+    <h1 style="margin-left: 2vw;">Programa para la creación de archivos de texto y directorios, Leonard Pirela</h1>
+    <hr><br>
+    </div>
+
+<div id="contenidoPagina" class="row container">
+
+    <div id="manejoFicheros" class="col m6">
+        <h3>Navegación de Ficheros</h3>
+        <h4>Fichero Actual:</h4>
+        <h5 id="directorioActual"></h5><button onclick="ficheroInicial = '..\/ficheros'; cargarDirectorios(ficheroInicial);">Ir hacia el principio</button>
+
+        <div id="divListaDirectorios">
+            <h3>Sub-Directorios dentro del directorio actual</h3>
+            <h6>--->>> Haz click en un directorio para acceder a su contenido</h6>
+            <ul id="listaDirectorios" style="font-size: larger;">
+
+            </ul>
+        </div>
+
+        <div id="divListaArchivos" style="font-size: larger;">
+            <h3>Archivos dentro del directorio actual</h3>
+            <ul id="listaArchivos">
+
+            </ul>
+        </div>
+
+    </div>
+
+<div id="creacionFicheroDirectorio" class="col m6">
+
+    <div id="divCrearFichero">
+    
+        <h3>Crea un nuevo fichero de texto dentro de la ubicación actual</h3>
+        
+        <form id="formNuevoFichero" onsubmit="return false;">
+            <label for="tituloFichero">Titulo del fichero</label>
+            <input name="tituloFichero" type="text" id="tituloFichero" />
+            <br><br>
+            <label for="contenidoFichero">Contenido del fichero</label>
+            <textarea name="textoFichero" id="contenidoFichero"></textarea>
+            <br><br>    
+            <button onclick="subirArchivo();">Subir archivo de texto</button>
+        </form>
+        
+    </div>
+
+    <br><br>
+    
+        <div id="divCrearDirectorio">
+            <h3>Crea un nuevo directorio en la ubicación actual: </h3>
+            <form id="formNuevoDirectorio" onsubmit="return false;">
+                <input name="directorioNombre" type="text" />
+                <button onclick="crearDirectorio();">Crear Directorio</button>
+            </form>
+        </div>
+        
+        <br>
+
+</div>
+
+</div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="./controladores/eventosPagina.js"></script>
+
+</body>
+</html>
